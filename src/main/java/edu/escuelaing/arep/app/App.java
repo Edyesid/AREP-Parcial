@@ -15,20 +15,22 @@ public class App {
 	 * @param args parametros al momento de iniciar la aplicación
 	 */
     public static void main(String [] args){
+    	
+    	ArrayList<Double> list = new ArrayList<Double>();
+    	
+    	list.add(5.0);
+    	list.add(6.0);
+    	list.add(7.0);
+    	list.add(8.0);
+    	list.add(9.0);
+    	list.add(10.0);
+    	
+    	Calculator cal = new Calculator(list);
+
+    	
         staticFiles.location("/public");
         port(getPort());
 		post("/calculator", (request, response) -> {
-			
-			ArrayList<Double> list = new ArrayList<Double>();
-	    	
-	    	list.add(5.0);
-	    	list.add(6.0);
-	    	list.add(7.0);
-	    	list.add(8.0);
-	    	list.add(9.0);
-	    	list.add(10.0);
-	    	
-	    	Calculator cal = new Calculator(list);
 			
 			return "{\"mean\":" + cal.sum() + ", \"dev\":" + cal.average() + "}";
  

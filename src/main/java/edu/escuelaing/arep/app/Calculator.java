@@ -36,7 +36,6 @@ public class Calculator {
 		for (int i = 0; i < list.size(); i++) {
 			suma += list.get(i);
 		}
-		System.out.println(Math.round(suma * 100.0) / 100.0);
 		return Math.round(suma * 100.0) / 100.0;
 	}
 	/**
